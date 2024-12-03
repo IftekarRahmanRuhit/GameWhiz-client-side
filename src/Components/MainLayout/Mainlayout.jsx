@@ -25,7 +25,7 @@ const Mainlayout = () => {
       />
                 <Navbar></Navbar>
             </div>
-            <div>
+            <div  className="min-h-[calc(100vh-401px)]">
                 <Outlet></Outlet>
             </div>
             <div>
