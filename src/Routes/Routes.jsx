@@ -9,6 +9,7 @@ import AddReview from "../Components/Pages/AddReview";
 import MyReviews from "../Components/Pages/MyReviews";
 import GameWatchlist from "../Components/Pages/GameWatchlist";
 import PrivateRoute from "../Components/PrivateRoute";
+import ForgetPassword from "../Components/Pages/ForgetPassword";
 
 
 export const routes = createBrowserRouter([
@@ -45,6 +46,10 @@ export const routes = createBrowserRouter([
             path: '/gamewatchlist',
             element: <PrivateRoute><GameWatchlist></GameWatchlist></PrivateRoute>
         },
+        {
+            path: '/forgetpassword',
+            element: <ForgetPassword></ForgetPassword>
+        }
       ]
     },
   ]);
