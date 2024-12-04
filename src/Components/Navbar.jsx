@@ -1,16 +1,14 @@
+
 import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-
 import toast from "react-hot-toast";
 import { FaUserCircle } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { LuLogIn } from "react-icons/lu";
 import { AuthContext } from "../Provider/AuthProvider";
 
-
 const Navbar = () => {
   const { user, signOutUser, loading } = useContext(AuthContext);
-  console.log(user)
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleSignOut = () => {
@@ -49,48 +47,45 @@ const Navbar = () => {
           All Reviews
         </NavLink>
       </li>
-
       {user && (
-        <li>
-          <NavLink
-            to="/addreview"
-            className={({ isActive }) =>
-              isActive
-                ? "text-[#E1713B] font-semibold underline "
-                : "text-black hover:text-[#E1713B] font-semibold"
-            }
-          >
-            Add Review
-          </NavLink>
-        </li>
-      )}
-      {user && (
-        <li>
-          <NavLink
-            to="/myreviews"
-            className={({ isActive }) =>
-              isActive
-                ? "text-[#E1713B] font-semibold underline "
-                : "text-black hover:text-[#E1713B] font-semibold"
-            }
-          >
-            My Reviews
-          </NavLink>
-        </li>
-      )}
-      {user && (
-        <li>
-          <NavLink
-            to="/gamewatchlist"
-            className={({ isActive }) =>
-              isActive
-                ? "text-[#E1713B] font-semibold underline "
-                : "text-black hover:text-[#E1713B] font-semibold"
-            }
-          >
-            Game WatchList
-          </NavLink>
-        </li>
+        <>
+          <li>
+            <NavLink
+              to="/addreview"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#E1713B] font-semibold underline"
+                  : "text-black hover:text-[#E1713B] font-semibold"
+              }
+            >
+              Add Review
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/myreviews"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#E1713B] font-semibold underline"
+                  : "text-black hover:text-[#E1713B] font-semibold"
+              }
+            >
+              My Reviews
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/gamewatchlist"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#E1713B] font-semibold underline"
+                  : "text-black hover:text-[#E1713B] font-semibold"
+              }
+            >
+              Game WatchList
+            </NavLink>
+          </li>
+        </>
       )}
     </>
   );
@@ -98,11 +93,9 @@ const Navbar = () => {
   if (loading) {
     return (
       <div className="w-full h-screen flex items-center justify-center">
-        <div className=" bg-base-100 w-full">
+        <div className="bg-base-100 w-full">
           <div className="text-center">
-            <div className="text-center">
-              <span className="loading loading-bars loading-md"></span>
-            </div>
+            <span className="loading loading-bars loading-md"></span>
           </div>
         </div>
       </div>
@@ -110,7 +103,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="w-full mx-auto bg-blue-50 md:p-2 max-w-screen-2xl ">
+    <div className="w-full mx-auto bg-blue-50 md:p-2 max-w-screen-2xl">
       <div className="navbar w-full md:w-11/12 mx-auto">
         <div className="navbar-start">
           <div className="dropdown lg:hidden">
@@ -133,7 +126,6 @@ const Navbar = () => {
                 />
               </svg>
             </button>
-
             {isMenuOpen && (
               <ul className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                 {links}
@@ -142,29 +134,29 @@ const Navbar = () => {
           </div>
           <Link
             to="/"
-            className="btn btn-ghost text-2xl text-[#E1713B] font-bold flex justify-center items-center "
+            className="btn btn-ghost text-2xl text-[#E1713B] font-bold flex justify-center items-center"
           >
-            {/* <img className="w-9 h-w-9 rounded-full" src={logo} alt="" /> */}
-            <p className=" text-lg md:text-2xl">GameWhiz</p>
+            <p className="text-lg md:text-2xl">GameWhiz</p>
           </Link>
         </div>
-
         <div className="navbar-center hidden lg:flex">
           <ul className="menu-horizontal space-x-8">{links}</ul>
         </div>
-
         <div className="navbar-end">
           {user ? (
             <div className="flex-none">
               <div className="dropdown dropdown-end">
                 <div
-                  tabindex="0"
+                  tabIndex="0"
                   role="button"
                   className="btn btn-ghost btn-circle avatar"
                 >
-                  <div className="w-10 rounded-full">
+                  <div
+                    className="w-10 rounded-full"
+                    title={user?.displayName || "User"}
+                  >
                     {user?.photoURL ? (
-                      <img src={user.photoURL} alt="" />
+                      <img src={user.photoURL} alt="User Profile" />
                     ) : (
                       <p className="text-2xl">
                         <FaUserCircle />
@@ -173,19 +165,16 @@ const Navbar = () => {
                   </div>
                 </div>
                 <ul
-                  tabindex="0"
+                  tabIndex="0"
                   className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
                 >
                   <div className="card-body p-2 w-full">
-                    <span className="text-lg font-bold"></span>
-
-                    <span className="text-gray-800 font-bold text-xl block overflow-hidden text-ellipsis whitespace-nowrap max-w-full text-center">
+                    <span className="text-gray-800 font-bold text-xl text-center block">
                       {user?.displayName}
                     </span>
-                    <span className="text-gray-800 font-bold block overflow-hidden text-ellipsis whitespace-nowrap max-w-full text-center">
+                    <span className="text-gray-800 font-bold text-center block">
                       {user?.email}
                     </span>
-
                     <div className="card-actions">
                       <button
                         onClick={handleSignOut}
@@ -221,4 +210,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar
