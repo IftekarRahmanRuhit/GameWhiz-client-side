@@ -104,7 +104,7 @@ const Navbar = () => {
     </li>
     <li>
       <NavLink
-        to="/myreviews"
+        to={`/myreviews/${user.email}`}
         className={({ isActive }) =>
           isActive
             ? "text-[#E1713B] font-semibold underline"

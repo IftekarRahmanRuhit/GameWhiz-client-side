@@ -11,6 +11,7 @@ import GameWatchlist from "../Components/Pages/GameWatchlist";
 import PrivateRoute from "../Components/PrivateRoute";
 import ForgetPassword from "../Components/Pages/ForgetPassword";
 import ReviewDetails from "../Components/Pages/ReviewDetails";
+import UpdateReview from "../Components/Pages/UpdateReview";
 
 
 export const routes = createBrowserRouter([
@@ -47,8 +48,15 @@ export const routes = createBrowserRouter([
             element: <PrivateRoute><AddReview></AddReview></PrivateRoute>
         },
         {
-            path: '/myreviews',
-            element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
+            path:'/updatereview/:id',
+            element: <UpdateReview></UpdateReview>,
+            loader: ({params})=> fetch(`http://localhost:5010/reviews/${params.id}`)
+            
+        },
+        {
+            path: '/myreviews/:email',
+            element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>,
+            loader: ({params})=>fetch(`http://localhost:5010/myreviews/${params.email}`)
         },
         {
             path: '/gamewatchlist/:email',
