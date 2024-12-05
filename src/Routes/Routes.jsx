@@ -32,7 +32,8 @@ export const routes = createBrowserRouter([
         },
         {
             path: '/allreviews',
-            element: <AllReviews></AllReviews>
+            element: <AllReviews></AllReviews>,
+            loader: ()=> fetch('http://localhost:5010/reviews')
         },
         {
             path: '/addreview',
