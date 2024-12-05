@@ -1,7 +1,7 @@
 
 
 import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AllReviews = () => {
   const allReviews = useLoaderData();
@@ -19,7 +19,7 @@ const AllReviews = () => {
     setSelectedGenre(genre);
   };
 
-  // Filtered reviews based on the selected genre
+
   const filteredReviews = selectedGenre
     ? sortedReviews.filter((review) => review.genre === selectedGenre)
     : sortedReviews;
@@ -129,10 +129,10 @@ const AllReviews = () => {
                 <p className="text-sm text-gray-500 mb-4">
                   Year: <span className="font-medium">{review.year}</span>
                 </p>
-                {/* Explore Details Button */}
-                <button className="block w-full bg-yellow-500 text-white text-center py-2 rounded hover:bg-yellow-600 transition duration-300">
+
+                <Link to={`/reviews/${review._id}`}><button className="block w-full bg-yellow-500 text-white text-center py-2 rounded hover:bg-yellow-600 transition duration-300">
                   Explore Details
-                </button>
+                </button></Link>
               </div>
             </div>
           ))}

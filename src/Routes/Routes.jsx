@@ -10,6 +10,7 @@ import MyReviews from "../Components/Pages/MyReviews";
 import GameWatchlist from "../Components/Pages/GameWatchlist";
 import PrivateRoute from "../Components/PrivateRoute";
 import ForgetPassword from "../Components/Pages/ForgetPassword";
+import ReviewDetails from "../Components/Pages/ReviewDetails";
 
 
 export const routes = createBrowserRouter([
@@ -20,7 +21,8 @@ export const routes = createBrowserRouter([
       children: [
         {
             path:'/',
-            element:<Home></Home>
+            element:<Home></Home>,
+            loader:()=> fetch('http://localhost:5010/highest-rated-reviews')
         },
         {
             path: '/login',
@@ -36,6 +38,11 @@ export const routes = createBrowserRouter([
             loader: ()=> fetch('http://localhost:5010/reviews')
         },
         {
+            path:'/reviews/:id',
+            element: <ReviewDetails></ReviewDetails>,
+            loader: ({params})=> fetch(`http://localhost:5010/reviews/${params.id}`)
+        },
+        {
             path: '/addreview',
             element: <PrivateRoute><AddReview></AddReview></PrivateRoute>
         },
@@ -44,8 +51,9 @@ export const routes = createBrowserRouter([
             element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
         },
         {
-            path: '/gamewatchlist',
-            element: <PrivateRoute><GameWatchlist></GameWatchlist></PrivateRoute>
+            path: '/gamewatchlist/:email',
+            element: <PrivateRoute><GameWatchlist></GameWatchlist></PrivateRoute>,
+            loader: ({params})=>fetch(`http://localhost:5010/gamewatchlist/${params.email}`)
         },
         {
             path: '/forgetpassword',
