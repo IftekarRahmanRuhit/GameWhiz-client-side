@@ -21,7 +21,7 @@ const Mainlayout = () => {
         toastOptions={{
           success: {
             style: {
-              background: "green",
+              background: "#008C8C",
               color: "white",
             },
           },

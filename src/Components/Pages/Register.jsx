@@ -5,9 +5,8 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
 import register from "../../../public/register.png";
 
-
 const Register = () => {
-  const { createUser,updateUserProfile} = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -55,12 +54,12 @@ const Register = () => {
   };
 
   return (
-    <div className="hero min-h-screen mt-4">
+    <div className="hero min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="hero-content flex-col lg:flex-row-reverse w-full">
-        <div className="card bg-blue-50 w-full max-w-lg shrink-0 shadow-2xl border mb-16">
+        <div className="card bg-white dark:bg-gray-800 w-full max-w-lg shrink-0 shadow-2xl  mb-16 mt-4">
           <form onSubmit={handleRegister} className="card-body">
             <img className="w-12 h-12 mx-auto" src={register} alt="" />
-            <h1 className="text-3xl font-bold text-center text-[#E1713B] mt-3">
+            <h1 className="text-3xl font-bold text-center text-[#00ADB5] mt-3">
               Create an account
             </h1>
             <p className="text-center text-gray-500 font-medium">
@@ -68,43 +67,49 @@ const Register = () => {
             </p>
             <div className="form-control mt-4">
               <label className="label">
-                <span className="label-text text-lg font-semibold">Name</span>
+                <span className="label-text text-lg font-semibold text-gray-700 dark:text-gray-200">
+                  Name
+                </span>
               </label>
               <input
                 type="text"
                 name="name"
                 placeholder="Name"
-                className="input input-bordered focus:outline-none focus:ring-2 focus:ring-[#E1713B]"
+                className="input input-bordered focus:outline-none focus:ring-2 focus:ring-[#00ADB5] dark:bg-gray-700 dark:text-white dark:border-gray-600"
                 required
               />
             </div>
             <div className="form-control mt-4">
               <label className="label">
-                <span className="label-text text-lg font-semibold">Photo</span>
+                <span className="label-text text-lg font-semibold text-gray-700 dark:text-gray-200">
+                  Photo
+                </span>
               </label>
               <input
                 type="text"
                 name="photo"
                 placeholder="Photo URL"
-                className="input input-bordered focus:outline-none focus:ring-2 focus:ring-[#E1713B]"
+                className="input input-bordered focus:outline-none focus:ring-2 focus:ring-[#00ADB5] dark:bg-gray-700 dark:text-white dark:border-gray-600"
                 required
               />
             </div>
             <div className="form-control mt-4">
               <label className="label">
-                <span className="label-text text-lg font-semibold">Email</span>
+                <span className="label-text text-lg font-semibold text-gray-700 dark:text-gray-200">
+                  Email
+                </span>
               </label>
               <input
                 type="email"
                 name="email"
                 placeholder="Email"
-                className="input input-bordered focus:outline-none focus:ring-2 focus:ring-[#E1713B]"
+                className="input input-bordered focus:outline-none focus:ring-2 focus:ring-[#00ADB5] dark:bg-gray-700 dark:text-white dark:border-gray-600"
                 required
               />
             </div>
             <div className="form-control relative mt-4">
               <label className="label">
-                <span className="label-text text-lg font-semibold">
+                <span className="label-text text-lg font-semibold text-gray-700 dark:text-gray-200">
                   Password
                 </span>
               </label>
@@ -112,12 +117,12 @@ const Register = () => {
                 type={showPassword ? "text" : "password"}
                 name="password"
                 placeholder="Password"
-                className="input input-bordered focus:outline-none focus:ring-2 focus:ring-[#E1713B]"
+                className="input input-bordered focus:outline-none focus:ring-2 focus:ring-[#00ADB5] dark:bg-gray-700 dark:text-white dark:border-gray-600"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-5 bottom-4"
+                className="absolute right-5 bottom-4 text-[#00ADB5]"
               >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </button>
@@ -126,21 +131,21 @@ const Register = () => {
               <input
                 type="checkbox"
                 name="terms"
-                className="checkbox"
+                className="checkbox dark:bg-gray-300"
                 required
               />
-              <span className="label-text font-semibold">
+              <span className="label-text font-semibold text-gray-700 dark:text-gray-200">
                 Accept Our Terms and Conditions
               </span>
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-[#E1713B] hover:bg-orange-600 w-full text-white font-semibold">
+              <button className="btn border-none bg-gradient-to-r from-[#00ADB5] to-[#008C8C] text-white hover:bg-gradient-to-l hover:bg-[#008C8C] transition-all duration-300 font-semibold dark:bg-gradient-to-r dark:from-[#00ADB5] dark:to-[#008C8C] dark:hover:bg-gradient-to-l dark:hover:bg-[#008C8C]">
                 Register
               </button>
             </div>
-            <p className="text-center mt-4 font-medium">
+            <p className="text-center mt-4 font-medium text-gray-700 dark:text-gray-300">
               Already have an account?
-              <Link to="/login" className="text-[#E1713B] underline">
+              <Link to="/login" className="text-[#00ADB5] underline">
                 Login
               </Link>
             </p>

@@ -110,7 +110,7 @@ const Login = () => {
           <label className="label">
             <a
               onClick={handleForgetPassword}
-              className="label-text-alt link link-hover text-[#00ADB5] text-sm font-medium dark:text-[#00ADB5]"
+              className="label-text-alt link link-hover text-[#00ADB5] text-sm font-medium dark:text-[#00ADB5] dark:hover:text-[#00ADB5]"
             >
               Forgot password?
             </a>

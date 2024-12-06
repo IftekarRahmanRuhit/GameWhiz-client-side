@@ -103,6 +103,9 @@ const Navbar = () => {
                   title: "Access Denied",
                   text: "Please log in to add a review.",
                   confirmButtonText: "Login",
+                  customClass: {
+                    confirmButton: 'bg-[#00ADB5]'
+                  }
                 })
               }
               className="text-gray-700 dark:text-blue-50 dark:hover:text-[#00ADB5] hover:text-[#00ADB5] font-semibold transition-all duration-200"
@@ -119,6 +122,9 @@ const Navbar = () => {
                   title: "Access Denied",
                   text: "Please log in to view your reviews.",
                   confirmButtonText: "Login",
+                  customClass: {
+                    confirmButton: 'bg-[#00ADB5]'
+                  }
                 })
               }
               className="text-gray-700 dark:text-blue-50 dark:hover:text-[#00ADB5] hover:text-[#00ADB5] font-semibold transition-all duration-200"
@@ -135,6 +141,9 @@ const Navbar = () => {
                   title: "Access Denied",
                   text: "Please log in to view your game watchlist.",
                   confirmButtonText: "Login",
+                  customClass: {
+                    confirmButton: 'bg-[#00ADB5]'
+                  }
                 })
               }
               className="text-gray-700 dark:text-blue-50 dark:hover:text-[#00ADB5] hover:text-[#00ADB5] font-semibold transition-all duration-200"
@@ -261,7 +270,7 @@ const Navbar = () => {
                     <div className="card-actions">
                       <button
                         onClick={handleSignOut}
-                        className="btn bg-[#E1713B] text-white hover:bg-orange-500 btn-block w-full mt-3"
+                        className="btn bg-gradient-to-r from-[#00ADB5] to-[#008C8C] text-white hover:bg-gradient-to-l hover:bg-[#008C8C] transition-all duration-300 border-none btn-block w-full mt-3"
                       >
                         Sign out
                       </button>

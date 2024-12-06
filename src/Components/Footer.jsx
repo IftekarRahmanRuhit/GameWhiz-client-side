@@ -9,7 +9,7 @@ const Footer = () => {
             <div>
               <div className="flex space-x-2">
                 {/* <img className="w-9 h-w-9 rounded-full" src={logo} alt="" /> */}
-                <h2 className="text-3xl font-bold text-[#E1713B]">GameWhiz</h2>
+                <h2 className="text-3xl font-bold text-[#008C8C]">GameWhiz</h2>
               </div>
   
               <p className="mt-4 text-gray-300">
@@ -26,11 +26,11 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Your E-mail"
-                  className="w-full px-4 py-2 rounded bg-gray-800 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#E1713B]"
+                  className="w-full px-4 py-2 rounded bg-gray-800 text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#008C8C]"
                 />
                 <button
                   type="submit"
-                  className="bg-[#E1713B] hover:bg-orange-500 text-white font-semibold py-2 px-4 rounded"
+                  className="bg-[#008C8C] hover:bg-[#008C8C] text-white font-semibold py-2 px-4 rounded"
                 >
                   Subscribe
                 </button>
