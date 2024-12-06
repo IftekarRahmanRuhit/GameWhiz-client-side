@@ -1,5 +1,5 @@
 
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import toast from "react-hot-toast";
 import { FaUserCircle } from "react-icons/fa";
@@ -7,10 +7,21 @@ import { FaUser } from "react-icons/fa";
 import { LuLogIn } from "react-icons/lu";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from 'sweetalert2';
+import { MdDarkMode } from "react-icons/md";
+import { IoMdSunny } from "react-icons/io";
+import { ThemeContext } from "../ThemeContext/ThemeContext";
 
 const Navbar = () => {
   const { user, signOutUser, loading } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [toggle, setToggle] = useState(true)
+  const {theme, setTheme} = useContext(ThemeContext)
+
+  useEffect(()=>{
+    console.log('theme', theme)
+  },[])
+
+
   console.log(user)
   const handleSignOut = () => {
     signOutUser()
@@ -21,6 +32,7 @@ const Navbar = () => {
         toast.error(error.message);
       });
   };
+
 
   const links = (
     <>
@@ -48,46 +60,7 @@ const Navbar = () => {
           All Reviews
         </NavLink>
       </li>
-      {/* {user && (
-        <>
-          <li>
-            <NavLink
-              to="/addreview"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-[#E1713B] font-semibold underline"
-                  : "text-black hover:text-[#E1713B] font-semibold"
-              }
-            >
-              Add Review
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/myreviews"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-[#E1713B] font-semibold underline"
-                  : "text-black hover:text-[#E1713B] font-semibold"
-              }
-            >
-              My Reviews
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/gamewatchlist"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-[#E1713B] font-semibold underline"
-                  : "text-black hover:text-[#E1713B] font-semibold"
-              }
-            >
-              Game WatchList
-            </NavLink>
-          </li>
-        </>
-      )} */}
+
 {user ? (
   <>
     <li>
@@ -197,7 +170,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="w-full mx-auto bg-blue-50 md:p-2 max-w-screen-2xl">
+    <div className="w-full mx-auto dark:bg-slate-700  bg-blue-50 md:p-2 max-w-screen-2xl">
       <div className="navbar w-full md:w-11/12 mx-auto">
         <div className="navbar-start">
           <div className="dropdown lg:hidden">
@@ -237,6 +210,21 @@ const Navbar = () => {
           <ul className="menu-horizontal space-x-8">{links}</ul>
         </div>
         <div className="navbar-end">
+
+          <div className="mr-5">
+
+          {theme=='light'?<MdDarkMode onClick={()=>setTheme('dark')} className="text-[30px] bg-slate-300 text-black p-1 rounded-full cursor-pointer" />: <IoMdSunny onClick={()=>setTheme('light')} className="text-[30px] bg-slate-300 text-black p-1 rounded-full cursor-pointer" />}
+
+
+          {/* <MdDarkMode />
+          <IoMdSunny /> */}
+
+
+
+          </div>
+
+
+
           {user ? (
             <div className="flex-none">
               <div className="dropdown dropdown-end">
@@ -250,7 +238,7 @@ const Navbar = () => {
                     title={user?.displayName || "User"}
                   >
                     {user?.photoURL ? (
-                      <img src={user.photoURL} alt="User Profile" />
+                      <img src={user.photoURL} alt="" />
                     ) : (
                       <p className="text-2xl">
                         <FaUserCircle />
@@ -266,7 +254,7 @@ const Navbar = () => {
                     <span className="text-gray-800 font-bold text-xl text-center block">
                       {user?.displayName}
                     </span>
-                    <span className="text-gray-800 font-bold text-center block">
+                    <span className="text-gray-800 font-bold block overflow-hidden text-ellipsis whitespace-nowrap max-w-full text-center">
                       {user?.email}
                     </span>
                     <div className="card-actions">

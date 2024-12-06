@@ -2,11 +2,17 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import { Toaster } from "react-hot-toast";
+import { useState } from "react";
+import { ThemeContext } from "../../ThemeContext/ThemeContext";
 
 
 const Mainlayout = () => {
+
+  const [theme,setTheme]= useState('light')
+
     return (
-        <div>
+      <ThemeContext.Provider value={{theme, setTheme}} >
+                <div className={`${theme} ${theme == 'dark'?'bg-black': null}`}>
             <div>
             <Toaster
         toastOptions={{
@@ -32,6 +38,8 @@ const Mainlayout = () => {
                 <Footer></Footer>
             </div>
         </div>
+      </ThemeContext.Provider>
+
     );
 };
 
