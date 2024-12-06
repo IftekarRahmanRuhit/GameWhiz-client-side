@@ -1,4 +1,3 @@
-
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -6,7 +5,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { LuLogIn } from "react-icons/lu";
 import { AuthContext } from "../Provider/AuthProvider";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 import { MdDarkMode } from "react-icons/md";
 import { IoMdSunny } from "react-icons/io";
 import { ThemeContext } from "../ThemeContext/ThemeContext";
@@ -14,15 +13,14 @@ import { ThemeContext } from "../ThemeContext/ThemeContext";
 const Navbar = () => {
   const { user, signOutUser, loading } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [toggle, setToggle] = useState(true)
-  const {theme, setTheme} = useContext(ThemeContext)
+  const [toggle, setToggle] = useState(true);
+  const { theme, setTheme } = useContext(ThemeContext);
 
-  useEffect(()=>{
-    console.log('theme', theme)
-  },[])
+  useEffect(() => {
+    console.log("theme", theme);
+  }, []);
 
-
-  console.log(user)
+  console.log(user);
   const handleSignOut = () => {
     signOutUser()
       .then(() => {
@@ -32,7 +30,6 @@ const Navbar = () => {
         toast.error(error.message);
       });
   };
-
 
   const links = (
     <>
@@ -61,99 +58,97 @@ const Navbar = () => {
         </NavLink>
       </li>
 
-{user ? (
-  <>
-    <li>
-      <NavLink
-        to="/addreview"
-        className={({ isActive }) =>
-          isActive
-            ? "text-[#E1713B] font-semibold underline"
-            : "text-black hover:text-[#E1713B] font-semibold"
-        }
-      >
-        Add Review
-      </NavLink>
-    </li>
-    <li>
-      <NavLink
-        to={`/myreviews/${user.email}`}
-        className={({ isActive }) =>
-          isActive
-            ? "text-[#E1713B] font-semibold underline"
-            : "text-black hover:text-[#E1713B] font-semibold"
-        }
-      >
-        My Reviews
-      </NavLink>
-    </li>
-    <li>
-      <NavLink
-        to={`/gamewatchlist/${user.email}`}
-        className={({ isActive }) =>
-          isActive
-            ? "text-[#E1713B] font-semibold underline"
-            : "text-black hover:text-[#E1713B] font-semibold"
-        }
-      >
-        Game WatchList
-      </NavLink>
-    </li>
-  </>
-) : (
-  <>
-    <li>
-      <NavLink
-        to="/login"
-        onClick={() =>
-          Swal.fire({
-            icon: "warning",
-            title: "Access Denied",
-            text: "Please log in to add a review.",
-            confirmButtonText: "Login",
-          })
-        }
-        className="text-black hover:text-[#E1713B] font-semibold"
-      >
-        Add Review
-      </NavLink>
-    </li>
-    <li>
-      <NavLink
-        to="/login"
-        onClick={() =>
-          Swal.fire({
-            icon: "warning",
-            title: "Access Denied",
-            text: "Please log in to view your reviews.",
-            confirmButtonText: "Login",
-          })
-        }
-        className="text-black hover:text-[#E1713B] font-semibold"
-      >
-        My Reviews
-      </NavLink>
-    </li>
-    <li>
-      <NavLink
-        to="/login"
-        onClick={() =>
-          Swal.fire({
-            icon: "warning",
-            title: "Access Denied",
-            text: "Please log in to view your game watchlist.",
-            confirmButtonText: "Login",
-          })
-        }
-        className="text-black hover:text-[#E1713B] font-semibold"
-      >
-        Game WatchList
-      </NavLink>
-    </li>
-  </>
-)}
-
-
+      {user ? (
+        <>
+          <li>
+            <NavLink
+              to="/addreview"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#E1713B] font-semibold underline"
+                  : "text-black hover:text-[#E1713B] font-semibold"
+              }
+            >
+              Add Review
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to={`/myreviews/${user.email}`}
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#E1713B] font-semibold underline"
+                  : "text-black hover:text-[#E1713B] font-semibold"
+              }
+            >
+              My Reviews
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to={`/gamewatchlist/${user.email}`}
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#E1713B] font-semibold underline"
+                  : "text-black hover:text-[#E1713B] font-semibold"
+              }
+            >
+              Game WatchList
+            </NavLink>
+          </li>
+        </>
+      ) : (
+        <>
+          <li>
+            <NavLink
+              to="/login"
+              onClick={() =>
+                Swal.fire({
+                  icon: "warning",
+                  title: "Access Denied",
+                  text: "Please log in to add a review.",
+                  confirmButtonText: "Login",
+                })
+              }
+              className="text-black hover:text-[#E1713B] font-semibold"
+            >
+              Add Review
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/login"
+              onClick={() =>
+                Swal.fire({
+                  icon: "warning",
+                  title: "Access Denied",
+                  text: "Please log in to view your reviews.",
+                  confirmButtonText: "Login",
+                })
+              }
+              className="text-black hover:text-[#E1713B] font-semibold"
+            >
+              My Reviews
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/login"
+              onClick={() =>
+                Swal.fire({
+                  icon: "warning",
+                  title: "Access Denied",
+                  text: "Please log in to view your game watchlist.",
+                  confirmButtonText: "Login",
+                })
+              }
+              className="text-black hover:text-[#E1713B] font-semibold"
+            >
+              Game WatchList
+            </NavLink>
+          </li>
+        </>
+      )}
     </>
   );
 
@@ -210,20 +205,19 @@ const Navbar = () => {
           <ul className="menu-horizontal space-x-8">{links}</ul>
         </div>
         <div className="navbar-end">
-
           <div className="mr-5">
-
-          {theme=='light'?<MdDarkMode onClick={()=>setTheme('dark')} className="text-[30px] bg-slate-300 text-black p-1 rounded-full cursor-pointer" />: <IoMdSunny onClick={()=>setTheme('light')} className="text-[30px] bg-slate-300 text-black p-1 rounded-full cursor-pointer" />}
-
-
-          {/* <MdDarkMode />
-          <IoMdSunny /> */}
-
-
-
+            {theme == "light" ? (
+              <MdDarkMode
+                onClick={() =>{ setTheme("dark"); localStorage.setItem('theme','dark')}}
+                className="text-[30px] bg-slate-300 text-black p-1 rounded-full cursor-pointer"
+              />
+            ) : (
+              <IoMdSunny
+                onClick={() => {setTheme("light");localStorage.setItem('theme','light')}}
+                className="text-[30px] bg-slate-300 text-black p-1 rounded-full cursor-pointer"
+              />
+            )}
           </div>
-
-
 
           {user ? (
             <div className="flex-none">
@@ -292,4 +286,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar
+export default Navbar;

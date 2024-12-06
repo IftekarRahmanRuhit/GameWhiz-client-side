@@ -2,13 +2,16 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import { Toaster } from "react-hot-toast";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ThemeContext } from "../../ThemeContext/ThemeContext";
 
 
 const Mainlayout = () => {
 
   const [theme,setTheme]= useState('light')
+  useEffect(()=>{
+    setTheme(localStorage.getItem('theme')?localStorage.getItem('theme'):'dark')
+  },[])
 
     return (
       <ThemeContext.Provider value={{theme, setTheme}} >
