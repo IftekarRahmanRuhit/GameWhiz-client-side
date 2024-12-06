@@ -1,3 +1,4 @@
+
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -13,14 +14,8 @@ import { ThemeContext } from "../ThemeContext/ThemeContext";
 const Navbar = () => {
   const { user, signOutUser, loading } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [toggle, setToggle] = useState(true);
   const { theme, setTheme } = useContext(ThemeContext);
 
-  useEffect(() => {
-    console.log("theme", theme);
-  }, []);
-
-  console.log(user);
   const handleSignOut = () => {
     signOutUser()
       .then(() => {
@@ -38,8 +33,8 @@ const Navbar = () => {
           to="/"
           className={({ isActive }) =>
             isActive
-              ? "text-[#E1713B] font-semibold underline"
-              : "text-black hover:text-[#E1713B] font-semibold"
+              ? "text-[#00ADB5] font-semibold underline"
+              : "text-gray-700 dark:text-blue-50 dark:hover:text-[#00ADB5] hover:text-[#00ADB5] font-semibold transition-all duration-200"
           }
         >
           Home
@@ -50,8 +45,8 @@ const Navbar = () => {
           to="/allreviews"
           className={({ isActive }) =>
             isActive
-              ? "text-[#E1713B] font-semibold underline"
-              : "text-black hover:text-[#E1713B] font-semibold"
+              ? "text-[#00ADB5] font-semibold underline"
+              : "text-gray-700 dark:text-blue-50 dark:hover:text-[#00ADB5] hover:text-[#00ADB5] font-semibold transition-all duration-200"
           }
         >
           All Reviews
@@ -65,9 +60,9 @@ const Navbar = () => {
               to="/addreview"
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#E1713B] font-semibold underline"
-                  : "text-black hover:text-[#E1713B] font-semibold"
-              }
+              ? "text-[#00ADB5] font-semibold underline"
+              : "text-gray-700 dark:text-blue-50 dark:hover:text-[#00ADB5] hover:text-[#00ADB5] font-semibold transition-all duration-200"
+          }
             >
               Add Review
             </NavLink>
@@ -77,9 +72,9 @@ const Navbar = () => {
               to={`/myreviews/${user.email}`}
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#E1713B] font-semibold underline"
-                  : "text-black hover:text-[#E1713B] font-semibold"
-              }
+              ? "text-[#00ADB5] font-semibold underline"
+              : "text-gray-700 dark:text-blue-50 dark:hover:text-[#00ADB5] hover:text-[#00ADB5] font-semibold transition-all duration-200"
+          }
             >
               My Reviews
             </NavLink>
@@ -89,9 +84,9 @@ const Navbar = () => {
               to={`/gamewatchlist/${user.email}`}
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#E1713B] font-semibold underline"
-                  : "text-black hover:text-[#E1713B] font-semibold"
-              }
+              ? "text-[#00ADB5] font-semibold underline"
+              : "text-gray-700 dark:text-blue-50 dark:hover:text-[#00ADB5] hover:text-[#00ADB5] font-semibold transition-all duration-200"
+          }
             >
               Game WatchList
             </NavLink>
@@ -110,7 +105,7 @@ const Navbar = () => {
                   confirmButtonText: "Login",
                 })
               }
-              className="text-black hover:text-[#E1713B] font-semibold"
+              className="text-gray-700 dark:text-blue-50 dark:hover:text-[#00ADB5] hover:text-[#00ADB5] font-semibold transition-all duration-200"
             >
               Add Review
             </NavLink>
@@ -126,7 +121,7 @@ const Navbar = () => {
                   confirmButtonText: "Login",
                 })
               }
-              className="text-black hover:text-[#E1713B] font-semibold"
+              className="text-gray-700 dark:text-blue-50 dark:hover:text-[#00ADB5] hover:text-[#00ADB5] font-semibold transition-all duration-200"
             >
               My Reviews
             </NavLink>
@@ -142,7 +137,7 @@ const Navbar = () => {
                   confirmButtonText: "Login",
                 })
               }
-              className="text-black hover:text-[#E1713B] font-semibold"
+              className="text-gray-700 dark:text-blue-50 dark:hover:text-[#00ADB5] hover:text-[#00ADB5] font-semibold transition-all duration-200"
             >
               Game WatchList
             </NavLink>
@@ -165,8 +160,14 @@ const Navbar = () => {
   }
 
   return (
-    <div className="w-full mx-auto dark:bg-slate-700  bg-blue-50 md:p-2 max-w-screen-2xl">
-      <div className="navbar w-full md:w-11/12 mx-auto">
+    <div
+      className={`w-full mx-auto ${
+        theme === "light"
+          ? "bg-gradient-to-r from-white via-[#E0F7F9] to-[#F0FCFC]"
+          : "bg-gradient-to-r from-gray-900 via-gray-800 to-black"
+      } md:p-2 max-w-screen-2xl`}
+    >
+      <div className="navbar w-full md:w-11/12 mx-auto pt-4 pb-4">
         <div className="navbar-start">
           <div className="dropdown lg:hidden">
             <button
@@ -196,7 +197,7 @@ const Navbar = () => {
           </div>
           <Link
             to="/"
-            className="btn btn-ghost text-2xl text-[#E1713B] font-bold flex justify-center items-center"
+            className="btn btn-ghost text-2xl text-[#00ADB5] font-bold flex justify-center items-center"
           >
             <p className="text-lg md:text-2xl">GameWhiz</p>
           </Link>
@@ -206,14 +207,20 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <div className="mr-5">
-            {theme == "light" ? (
+            {theme === "light" ? (
               <MdDarkMode
-                onClick={() =>{ setTheme("dark"); localStorage.setItem('theme','dark')}}
+                onClick={() => {
+                  setTheme("dark");
+                  localStorage.setItem("theme", "dark");
+                }}
                 className="text-[30px] bg-slate-300 text-black p-1 rounded-full cursor-pointer"
               />
             ) : (
               <IoMdSunny
-                onClick={() => {setTheme("light");localStorage.setItem('theme','light')}}
+                onClick={() => {
+                  setTheme("light");
+                  localStorage.setItem("theme", "light");
+                }}
                 className="text-[30px] bg-slate-300 text-black p-1 rounded-full cursor-pointer"
               />
             )}
@@ -266,17 +273,16 @@ const Navbar = () => {
           ) : (
             <>
               <Link
-                className="btn mr-2 bg-[#E1713B] text-white hover:text-[#E1713B] hidden md:flex"
+                className="btn btn-sm md:btn-md mr-2 bg-gradient-to-r from-[#00ADB5] to-[#008C8C] text-white hover:bg-gradient-to-l hover:bg-[#008C8C] transition-all duration-300 hidden md:flex border-none"
                 to="/Register"
               >
-                <FaUser /> sign up
+                <FaUser className="mr-1" /> Sign up
               </Link>
               <Link
-                className="btn font-bold bg-[#E1713B] text-white hover:text-[#E1713B]"
+                className="btn btn-sm md:btn-md font-bold bg-gradient-to-r from-[#00ADB5] to-[#008C8C] text-white hover:bg-gradient-to-l hover:bg-[#008C8C] transition-all duration-300 border-none"
                 to="/login"
               >
-                <LuLogIn />
-                Login
+                <LuLogIn className="mr-1" /> Login
               </Link>
             </>
           )}
