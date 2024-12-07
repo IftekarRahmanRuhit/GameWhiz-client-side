@@ -5,6 +5,8 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
 import register from "../../../public/register.png";
 
+
+
 const Register = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -54,7 +56,8 @@ const Register = () => {
   };
 
   return (
-    <div className="hero min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="hero min-h-screen bg-gray-900">
+
       <div className="hero-content flex-col lg:flex-row-reverse w-full">
         <div className="card bg-white dark:bg-gray-800 w-full max-w-lg shrink-0 shadow-2xl  mb-16 mt-4">
           <form onSubmit={handleRegister} className="card-body">
