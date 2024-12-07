@@ -103,43 +103,7 @@ const AllReviews = () => {
             </div>
           </div>
 
-          {/* <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {filteredReviews.map((review) => (
-            <div
-              key={review.id}
-              className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition duration-300"
-            >
-           
-              <img
-                src={review.coverImage}
-                alt={review.gameTitle}
-                className="w-full h-48 object-cover"
-              />
-              
-              <div className="p-6">
-                <h2 className="text-2xl font-semibold text-gray-800 mb-2">
-                  {review.gameTitle}
-                </h2>
-                <p className="text-sm text-gray-500 mb-4">
-                  Genre: <span className="font-medium">{review.genre}</span>
-                </p>
-                <p className="text-sm text-gray-500 mb-4">
-                  Rating:{" "}
-                  <span className="font-medium text-yellow-600">
-                    {"★".repeat(review.rating)}
-                  </span>
-                </p>
-                <p className="text-sm text-gray-500 mb-4">
-                  Year: <span className="font-medium">{review.year}</span>
-                </p>
-
-                <Link to={`/reviews/${review._id}`}><button className="block w-full bg-yellow-500 text-white text-center py-2 rounded hover:bg-yellow-600 transition duration-300">
-                  Explore Details
-                </button></Link>
-              </div>
-            </div>
-          ))}
-        </div> */}
+ 
 
           <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {filteredReviews.map((review) => (
