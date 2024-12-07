@@ -109,7 +109,7 @@ const AllReviews = () => {
             {filteredReviews.map((review) => (
               <div
                 key={review.id}
-                className="card relative bg-base-100 dark:bg-gray-900 dark:text-white p-6 rounded-lg shadow-lg animate__animated animate__fadeInUp cursor-pointer hover:border-[#008C8C] hover:border-2 overflow-hidden hover:scale-105 transition-transform duration-100 "
+                className="card relative bg-base-100 dark:bg-gray-900 dark:text-white p-6 rounded-lg shadow-lg animate__animated animate__fadeInUp cursor-pointer hover:border-[#008C8C] hover:border-2 overflow-hidden hover:scale-105 transition duration-100 "
               >
                 <div className="relative overflow-hidden rounded-lg">
                   <img

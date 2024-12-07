@@ -42,7 +42,8 @@ const AddReview = () => {
             title: "Success",
             text: "Review added successfully!",
             icon: "success",
-            confirmButtonText: "Cool",
+            confirmButtonText: "close",
+            confirmButtonColor: "#008C8C",
           });
           form.reset();
         }

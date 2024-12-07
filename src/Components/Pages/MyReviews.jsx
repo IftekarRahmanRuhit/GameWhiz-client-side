@@ -43,7 +43,7 @@ const MyReviews = () => {
         My Reviews
       </h1>
       {myReviews.length === 0 ? (
-        <p className="text-gray-600 text-center text-lg">
+        <p className="text-gray-600 text-center text-lg font-semibold dark:text-gray-300">
           You haven't added any reviews yet.
         </p>
       ) : (

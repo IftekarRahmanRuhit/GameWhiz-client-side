@@ -36,7 +36,11 @@ const ReviewDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          Swal.fire("Success!", "Added to your watchlist.", "success");
+          Swal.fire({ title: "Success",
+            text: "Added to your watchlist!",
+            icon: "success",
+            confirmButtonColor: "#008C8C",
+            confirmButtonText: "Close",});
         } else {
           Swal.fire("Error!", "Something went wrong.", "error");
         }
