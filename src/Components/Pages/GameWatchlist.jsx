@@ -5,9 +5,11 @@ const GameWatchlist = () => {
   console.log(watchLists);
 
   return (
-    <div className="w-4/5 mx-auto">
+<div className="bg-slate-100 dark:bg-gradient-to-r from-gray-800 via-[#013b3b] to-gray-800">
+
+<div className="w-4/5 mx-auto">
       <div className="p-8">
-        <h1 className="text-3xl font-semibold text-gray-800 mb-4">
+        <h1 className=" text-2xl md:text-3xl font-bold mb-10 mt-5  text-gray-800 dark:text-gray-300 animate__animated animate__backInLeft">
           Your Game Watchlist
         </h1>
 
@@ -15,16 +17,16 @@ const GameWatchlist = () => {
           <table className="table w-full text-gray-700">
             <thead className="bg-gray-100">
               <tr>
-                <th className="py-2 px-4 text-left">Game Name</th>
-                <th className="py-2 px-4 text-left">Rating</th>
-                <th className="py-2 px-4 text-left">Genre</th>
-                <th className="py-2 px-4"></th>
+                <th className=" text-left border border-gray-300 dark:border-gray-200 px-4 py-2 text-sm md:text-base">Game Name</th>
+                <th className="border border-gray-300 dark:border-gray-200 px-4 py-2 text-sm md:text-base text-left ">Rating</th>
+                <th className="border border-gray-300 dark:border-gray-200 px-4 py-2 text-sm md:text-base text-left">Genre</th>
+                <th className="border border-gray-300 dark:border-gray-200 px-4 py-2 text-sm md:text-base"></th>
               </tr>
             </thead>
 
             <tbody>
               {watchLists.map((game, index) => (
-                <tr key={index} className="border-t hover:bg-gray-50">
+                <tr key={index} className="border-t hover:bg-gray-50 dark:bg-gradient-to-r from-gray-900 via-gray-800 to-black">
                   <td className="py-2 px-4">
                     <div className="flex items-center gap-3">
                       <div className="avatar">
@@ -33,15 +35,15 @@ const GameWatchlist = () => {
                         </div>
                       </div>
                       <div>
-                        <div className="font-semibold">{game.title}</div>
+                        <div className="text-sm md:text-lg text-gray-800 dark:text-gray-400 font-semibold">{game.title}</div>
                       </div>
                     </div>
                   </td>
-                  <td className="py-2 px-4">{"★".repeat(game.rating)}</td>
-                  <td className="py-2 px-4">{game.genre}</td>
-                  <td className="py-2 px-4">
+                  <td className="py-2 px-4"><span className="text-yellow-500 text-lg">{"★".repeat(game.rating)}</span></td>
+                  <td className="py-2 px-4 text-sm md:text-lg text-gray-800 dark:text-gray-400 font-semibold">{game.genre}</td>
+                  <td className="py-2 px-4 ">
                     <Link to={`/reviews/${game.reviewId}`}>
-                      <button className="btn btn-ghost btn-xs">Details</button>
+                      <button className="btn btn-ghost btn-xs text-gray-800 dark:text-gray-400 dark:hover:bg-[#008C8C] dark:hover:text-gray-50 font-semibold">Details</button>
                     </Link>
                   </td>
                 </tr>
@@ -51,6 +53,7 @@ const GameWatchlist = () => {
         </div>
       </div>
     </div>
+</div>
   );
 };
 

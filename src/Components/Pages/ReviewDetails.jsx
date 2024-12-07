@@ -47,33 +47,35 @@ const ReviewDetails = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-6 bg-white shadow-md rounded-lg">
+<div className="p-10 bg-slate-100 dark:bg-gradient-to-r from-gray-800 via-[#013b3b] to-gray-800  ">
+<div className="max-w-3xl mx-auto p-6 bg-base-100 dark:bg-gray-900 shadow-md rounded-lg animate__animated animate__fadeInUp cursor-pointer ">
       <img
         src={review.coverImage}
         alt={review.title}
-        className="w-full h-64 object-cover rounded-lg"
+        className="w-full h-64 object-fill rounded-lg"
       />
-      <h1 className="text-2xl font-bold mt-4">{review.gameTitle}</h1>
-      <p className="text-gray-700 mt-2">{review.description}</p>
+      <h1 className="text-2xl font-bold mt-4  text-gray-800 dark:text-white">{review.gameTitle}</h1>
+      <p className=" mt-2  text-gray-800 dark:text-gray-400 font-semibold">{review.description}</p>
       <p className="mt-2">
-        <span className="font-semibold">Genre:</span> {review.genre || "N/A"}
+        <span className="font-semibold text-lg text-gray-800 dark:text-gray-400 mt-1 ">Genre:</span> <span className="font-semibold text-lg text-gray-800 dark:text-gray-400">{review.genre || "N/A"}</span>
       </p>
       <p className="mt-2">
-        <span className="font-semibold">Rating: <span className="text-yellow-500">{"★".repeat(review.rating)}</span></span> 
+        <span className="font-semibold ext-gray-800 dark:text-gray-400 text-lg">Rating: <span className="text-yellow-500">{"★".repeat(review.rating)}</span></span> 
       </p>
       <p className="mt-2">
-        <span className="font-semibold">Reviewer:</span> {review.userName}
+        <span className="text-lg text-gray-800 dark:text-gray-400 mt-2 font-semibold">Reviewer:</span> <span className="text-lg text-gray-800 dark:text-gray-400 mt-2 font-semibold">{review.userName}</span>
       </p>
       <p className="mt-2">
-        <span className="font-semibold">Email:</span> {review.userEmail}
+        <span className="text-lg text-gray-800 dark:text-gray-400 mt-2 font-semibold">Email:</span> <span className="text-lg text-gray-800 dark:text-gray-400 mt-2 font-semibold">{review.userEmail}</span>
       </p>
       <button
         onClick={handleAddToWatchlist}
-        className="mt-6 px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600"
+        className="btn-sm md:btn-md mt-6 px-6 py-2 font-bold bg-gradient-to-r from-[#00ADB5] to-[#008C8C] text-white hover:bg-gradient-to-l hover:bg-[#008C8C] transition-all duration-300 border-none rounded-lg"
       >
         Add to WatchList
       </button>
     </div>
+</div>
   );
 };
 
