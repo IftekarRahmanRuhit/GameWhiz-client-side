@@ -35,7 +35,7 @@ const HighestRatedReviews = () => {
         {reviews.map((review) => (
           <div
             key={review._id}
-            className="card relative bg-base-100 dark:bg-gray-900 dark:text-white p-6 rounded-lg shadow-lg animate__animated animate__fadeInUp cursor-pointer hover:border-[#008C8C] hover:border-2 overflow-hidden"
+            className="card relative bg-base-100 dark:bg-gray-900 dark:text-white p-6 rounded-lg shadow-lg animate__animated animate__fadeInUp cursor-pointer"
           >
  
             <div className="relative overflow-hidden rounded-lg">

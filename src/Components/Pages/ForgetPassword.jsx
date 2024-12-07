@@ -31,27 +31,27 @@ const ForgetPassword = () => {
 
     
     return (
-        <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
-        <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-          <h2 className="text-2xl font-bold text-center mb-4 text-[#E1713B]">Reset Password</h2>
-          <p className="text-gray-600 text-center mb-6 font-medium">
+        <div className="flex justify-center items-center min-h-screen bg-gray-200 dark:bg-gray-900 p-4">
+        <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
+          <h2 className="text-2xl font-bold text-center mb-4 text-[#008C8C]">Reset Password</h2>
+          <p className="text-gray-600 dark:text-gray-300 text-center mb-6 font-medium">
             Enter your email address below to reset your password.
           </p>
           <div className="form-control mb-4">
             <label className="label">
-              <span className="label-text font-bold">Email Address</span>
+              <span className="label-text font-bold ">Email Address</span>
             </label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="input input-bordered w-full focus:outline-none focus:ring-2 focus:ring-[#E1713B]"
+              className="input input-bordered w-full focus:outline-none focus:ring-2 focus:ring-[#008C8C] dark:bg-gray-700 dark:text-white"
               placeholder="Enter your email"
             />
           </div>
           <button
             onClick={handleResetPassword}
-            className="btn text-white bg-[#E1713B] hover:bg-orange-600 w-full"
+            className="btn t font-bold bg-gradient-to-r from-[#00ADB5] to-[#008C8C] text-white hover:bg-gradient-to-l hover:bg-[#008C8C] transition-all duration-300 border-none w-full"
           >
             Reset Password
           </button>

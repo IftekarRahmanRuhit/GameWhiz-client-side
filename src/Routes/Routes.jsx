@@ -23,7 +23,7 @@ export const routes = createBrowserRouter([
         {
             path:'/',
             element:<Home></Home>,
-            loader:()=> fetch('http://localhost:5010/highest-rated-reviews')
+            loader:()=> fetch('https://game-whiz-server-side.vercel.app/highest-rated-reviews')
         },
         {
             path: '/login',
@@ -36,12 +36,12 @@ export const routes = createBrowserRouter([
         {
             path: '/allreviews',
             element: <AllReviews></AllReviews>,
-            loader: ()=> fetch('http://localhost:5010/reviews')
+            loader: ()=> fetch('https://game-whiz-server-side.vercel.app/reviews')
         },
         {
             path:'/reviews/:id',
             element: <ReviewDetails></ReviewDetails>,
-            loader: ({params})=> fetch(`http://localhost:5010/reviews/${params.id}`)
+            loader: ({params})=> fetch(`https://game-whiz-server-side.vercel.app/reviews/${params.id}`)
         },
         {
             path: '/addreview',
@@ -50,18 +50,18 @@ export const routes = createBrowserRouter([
         {
             path:'/updatereview/:id',
             element: <UpdateReview></UpdateReview>,
-            loader: ({params})=> fetch(`http://localhost:5010/reviews/${params.id}`)
+            loader: ({params})=> fetch(`https://game-whiz-server-side.vercel.app/reviews/${params.id}`)
             
         },
         {
             path: '/myreviews/:email',
             element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>,
-            loader: ({params})=>fetch(`http://localhost:5010/myreviews/${params.email}`)
+            loader: ({params})=>fetch(`https://game-whiz-server-side.vercel.app/myreviews/${params.email}`)
         },
         {
             path: '/gamewatchlist/:email',
             element: <PrivateRoute><GameWatchlist></GameWatchlist></PrivateRoute>,
-            loader: ({params})=>fetch(`http://localhost:5010/gamewatchlist/${params.email}`)
+            loader: ({params})=>fetch(`https://game-whiz-server-side.vercel.app/gamewatchlist/${params.email}`)
         },
         {
             path: '/forgetpassword',

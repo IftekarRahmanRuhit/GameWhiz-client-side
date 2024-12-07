@@ -26,7 +26,7 @@ const AddReview = () => {
       userName: user?.displayName,
     };
 
-    console.log(newReview);
+    // console.log(newReview);
 
     fetch("http://localhost:5010/reviews", {
       method: "POST",

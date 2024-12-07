@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 
 const MyReviews = () => {
   const reviews = useLoaderData();
-  console.log(reviews);
+  // console.log(reviews);
 
   const [myReviews, setMyReviews] = useState(reviews);
 
