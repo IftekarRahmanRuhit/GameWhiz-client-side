@@ -5,9 +5,9 @@ const GameWatchlist = () => {
 
 
   return (
-<div className="bg-slate-100 dark:bg-gradient-to-r from-gray-800 via-[#013b3b] to-gray-800 max-w-screen-2xl mx-auto">
+<div className="bg-[#e3ebeb] dark:bg-gradient-to-r from-gray-800 via-[#013b3b] to-gray-800 max-w-screen-2xl mx-auto">
 
-<div className="w-4/5 mx-auto">
+<div className="w-4/5 mx-auto pb-16">
       <div className="p-8">
         <h1 className=" text-2xl md:text-3xl font-bold mb-10 mt-5  text-gray-800 dark:text-gray-300 animate__animated animate__backInLeft">
           Your Game Watchlist
@@ -26,7 +26,7 @@ const GameWatchlist = () => {
 
             <tbody>
               {watchLists.map((game, index) => (
-                <tr key={index} className="border-t hover:bg-gray-50 dark:bg-gradient-to-r from-gray-900 via-gray-800 to-black">
+                <tr key={index} className="border-t hover:bg-gray-100 dark:bg-gradient-to-r from-gray-900 via-gray-800 to-black cursor-pointer">
                   <td className="py-2 px-4">
                     <div className="flex items-center gap-3">
                       <div className="avatar">

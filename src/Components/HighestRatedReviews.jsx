@@ -17,13 +17,13 @@ const HighestRatedReviews = () => {
   });
 
   return (
-    <div className="bg-slate-200 dark:bg-gradient-to-r from-gray-800 via-[#013b3b] to-gray-800 p-10 max-w-screen-2xl mx-auto">
+    <div className="bg-[#e3ebeb] dark:bg-gradient-to-r from-gray-800 via-[#013b3b] to-gray-800 p-10 max-w-screen-2xl mx-auto">
 
       <div>
-        <p className="text-2xl md:text-4xl text-center text-gray-800 dark:text-gray-300 font-bold mb-4 mt-16">
+        <p className="text-2xl md:text-4xl text-center text-gray-800 dark:text-gray-300 font-bold mb-6 mt-16">
           {text}
         </p>
-        <p className="text-gray-800 font-medium dark:text-gray-300 text-center mb-10">
+        <p className="text-gray-800 font-medium dark:text-gray-300 text-center mb-16">
           Discover top-rated games with stunning visuals, thrilling gameplay, captivating stories, and
           <br />
           ultimate entertainment. Dive into unforgettable gaming adventures today!
@@ -31,7 +31,7 @@ const HighestRatedReviews = () => {
       </div>
 
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-11/12 mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-11/12 mx-auto pb-20">
         {reviews.map((review) => (
           <div
             key={review._id}
