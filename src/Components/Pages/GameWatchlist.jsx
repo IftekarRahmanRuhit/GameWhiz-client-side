@@ -2,7 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const GameWatchlist = () => {
   const watchLists = useLoaderData();
-  // console.log(watchLists);
+
 
   return (
 <div className="bg-slate-100 dark:bg-gradient-to-r from-gray-800 via-[#013b3b] to-gray-800 max-w-screen-2xl mx-auto">

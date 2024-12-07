@@ -7,9 +7,9 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const ReviewDetails = () => {
   const review = useLoaderData(); 
-  console.log(review)
+
   const { user } = useContext(AuthContext); 
-  console.log(user)
+
 
   const handleAddToWatchlist = () => {
     if (!user) {

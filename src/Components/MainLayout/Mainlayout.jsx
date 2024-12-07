@@ -15,7 +15,7 @@ const Mainlayout = () => {
 
     return (
       <ThemeContext.Provider value={{theme, setTheme}} >
-                <div className={`${theme} ${theme == 'dark'?'bg-black': null}`}>
+                <div className={`${theme} ${theme == 'dark'?'bg-gray-900': null}`}>
             <div>
             <Toaster
         toastOptions={{

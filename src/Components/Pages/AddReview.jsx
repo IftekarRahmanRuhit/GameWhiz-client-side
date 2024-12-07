@@ -26,7 +26,7 @@ const AddReview = () => {
       userName: user?.displayName,
     };
 
-    // console.log(newReview);
+ 
 
     fetch("https://game-whiz-server-side.vercel.app/reviews", {
       method: "POST",
