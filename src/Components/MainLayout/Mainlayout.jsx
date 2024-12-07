@@ -8,7 +8,7 @@ import { ThemeContext } from "../../ThemeContext/ThemeContext";
 
 const Mainlayout = () => {
 
-  const [theme,setTheme]= useState('light')
+  const [theme,setTheme]= useState('dark')
   useEffect(()=>{
     setTheme(localStorage.getItem('theme')?localStorage.getItem('theme'):'dark')
   },[])
