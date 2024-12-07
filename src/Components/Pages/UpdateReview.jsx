@@ -31,7 +31,7 @@ const UpdateReview = () => {
       userName: user?.displayName,
     };
 
-    fetch(`http://localhost:5010/reviews/${loadedReview._id}`, {
+    fetch(`https://game-whiz-server-side.vercel.app/reviews/${loadedReview._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -45,7 +45,8 @@ const UpdateReview = () => {
             title: "Success",
             text: "Review updated successfully!",
             icon: "success",
-            confirmButtonText: "Cool",
+            confirmButtonColor: "#008C8C",
+            confirmButtonText: "Close",
           });
           navigate("/allreviews"); 
         }
@@ -61,12 +62,13 @@ const UpdateReview = () => {
     </h2>
     <form className="space-y-6" onSubmit={handleUpdateReview}>
       <div>
-        <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+        <label  className="block text-sm font-medium text-gray-700 dark:text-gray-200">
           Game Cover Image (URL)
         </label>
         <input
           type="text"
           name="coverImage"
+          required
           placeholder="Enter game cover image URL"
           className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-[#008C8C] dark:bg-gray-700 dark:text-white dark:focus:ring-[#008C8C]"
         />
@@ -78,6 +80,7 @@ const UpdateReview = () => {
         <input
           type="text"
           name="gameTitle"
+          required
           placeholder="Enter game title"
           className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-[#008C8C] dark:bg-gray-700 dark:text-white dark:focus:ring-[#008C8C]"
         />
@@ -89,6 +92,7 @@ const UpdateReview = () => {
         <textarea
           name="description"
           placeholder="Enter your review"
+          required
           className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-[#008C8C] dark:bg-gray-700 dark:text-white dark:focus:ring-[#008C8C]"
           rows="4"
         ></textarea>
@@ -102,6 +106,7 @@ const UpdateReview = () => {
             type="number"
             name="rating"
             placeholder="Enter rating"
+            required
             min="1"
             max="5"
             className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-[#008C8C] dark:bg-gray-700 dark:text-white dark:focus:ring-[#008C8C]"
@@ -117,6 +122,7 @@ const UpdateReview = () => {
             min="1990"
             max="3000"
             placeholder="Enter publishing year"
+            required
             className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-[#008C8C] dark:bg-gray-700 dark:text-white dark:focus:ring-[#008C8C]"
           />
         </div>
@@ -126,6 +132,7 @@ const UpdateReview = () => {
           </label>
           <select
             name="genre"
+            required
             className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-[#008C8C] dark:bg-gray-700 dark:text-white dark:focus:ring-[#008C8C]"
           >
             <option value="">Select Genre</option>

@@ -58,14 +58,14 @@ const Login = () => {
   };
 
   return (
-    <div className="hero min-h-screen bg-gray-50 relative">
+    <div className="hero min-h-screen bg-gray-900 relative max-w-screen-2xl mx-auto">
 
       <div className="">
         <Lottie
           loop
           animationData={darkBgAnimation}
           play
-          className="w-full h-full"
+          className="w-full h-full max-w-screen-2xl mx-auto"
         />
       </div>
 

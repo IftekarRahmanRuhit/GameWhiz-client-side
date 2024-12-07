@@ -5,7 +5,7 @@ const GameWatchlist = () => {
   // console.log(watchLists);
 
   return (
-<div className="bg-slate-100 dark:bg-gradient-to-r from-gray-800 via-[#013b3b] to-gray-800">
+<div className="bg-slate-100 dark:bg-gradient-to-r from-gray-800 via-[#013b3b] to-gray-800 max-w-screen-2xl mx-auto">
 
 <div className="w-4/5 mx-auto">
       <div className="p-8">

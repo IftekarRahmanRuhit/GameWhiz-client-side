@@ -28,7 +28,7 @@ const AddReview = () => {
 
     // console.log(newReview);
 
-    fetch("http://localhost:5010/reviews", {
+    fetch("https://game-whiz-server-side.vercel.app/reviews", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,7 +52,7 @@ const AddReview = () => {
   };
 
   return (
-    <div className="bg-slate-100 dark:bg-gradient-to-r from-gray-800 via-[#013b3b] to-gray-800 pb-10">
+    <div className="bg-slate-100 dark:bg-gradient-to-r from-gray-800 via-[#013b3b] to-gray-800 pb-10 max-w-screen-2xl mx-auto">
       <div className="p-10">
         <p className="text-4xl font-bold text-center mb-4 text-gray-800 dark:text-gray-300 animate__animated animate__backInDown">
           Add Your Game Review
@@ -75,6 +75,7 @@ const AddReview = () => {
             <input
               type="text"
               name="coverImage"
+              required
               placeholder="Enter game cover image URL"
               className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-[#008C8C] dark:bg-gray-700 dark:text-white dark:focus:ring-[#008C8C]"
             />
@@ -86,6 +87,7 @@ const AddReview = () => {
             <input
               type="text"
               name="gameTitle"
+              required
               placeholder="Enter game title"
               className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-[#008C8C] dark:bg-gray-700 dark:text-white dark:focus:ring-[#008C8C]"
             />
@@ -97,6 +99,7 @@ const AddReview = () => {
             <textarea
               name="description"
               placeholder="Enter your review"
+              required
               className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-[#008C8C] dark:bg-gray-700 dark:text-white dark:focus:ring-[#008C8C]"
               rows="4"
             ></textarea>
@@ -109,6 +112,7 @@ const AddReview = () => {
               <input
                 type="number"
                 name="rating"
+                required
                 placeholder="Enter rating"
                 min="1"
                 max="5"
@@ -125,6 +129,7 @@ const AddReview = () => {
                 min="1990"
                 max="3000"
                 placeholder="Enter publishing year"
+                required
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-[#008C8C] dark:bg-gray-700 dark:text-white dark:focus:ring-[#008C8C]"
               />
             </div>
@@ -134,6 +139,7 @@ const AddReview = () => {
               </label>
               <select
                 name="genre"
+                required
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-[#008C8C] dark:bg-gray-700 dark:text-white dark:focus:ring-[#008C8C]"
               >
                 <option value="Action">Action</option>

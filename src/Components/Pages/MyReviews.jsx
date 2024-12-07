@@ -19,13 +19,20 @@ const MyReviews = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5010/reviews/${id}`, {
+        fetch(`https://game-whiz-server-side.vercel.app/reviews/${id}`, {
           method: "DELETE",
         })
+        // Deleted!", "Your review has been deleted.", "success"
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
-              Swal.fire("Deleted!", "Your review has been deleted.", "success");
+              Swal.fire({
+                title: "Success",
+                text: "Your review has been deleted.",
+                icon: "success",
+                confirmButtonColor: "#008C8C",
+                confirmButtonText: "Close",
+              });
 
               const remainingReviews = myReviews.filter(
                 (review) => review._id !== id
@@ -38,7 +45,7 @@ const MyReviews = () => {
   };
 
   return (
-    <div className="p-14 bg-slate-100 dark:bg-gradient-to-r from-gray-800 via-[#013b3b] to-gray-800">
+    <div className="p-14 bg-slate-100 dark:bg-gradient-to-r from-gray-800 via-[#013b3b] to-gray-800 max-w-screen-2xl mx-auto">
       <h1 className="text-2xl md:text-3xl font-bold  w-11/12 mx-auto text-gray-800 dark:text-gray-300 animate__animated animate__backInLeft mb-8">
         My Reviews
       </h1>

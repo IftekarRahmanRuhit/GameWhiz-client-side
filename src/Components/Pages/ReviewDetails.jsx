@@ -9,6 +9,7 @@ const ReviewDetails = () => {
   const review = useLoaderData(); 
   console.log(review)
   const { user } = useContext(AuthContext); 
+  console.log(user)
 
   const handleAddToWatchlist = () => {
     if (!user) {
@@ -26,7 +27,7 @@ const ReviewDetails = () => {
       userEmail: user.email,     
     };
 
-    fetch("http://localhost:5010/gamewatchlist",{
+    fetch("https://game-whiz-server-side.vercel.app/gamewatchlist",{
       method: "POST",
       headers: {
         "Content-Type": "application/json",
