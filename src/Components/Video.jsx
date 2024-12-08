@@ -28,7 +28,7 @@ const Video = () => {
         </p>
 
    
-        <button className="mt-6 px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white dark:text-gray-100 font-semibold rounded-lg hover:scale-105 transition-transform text-sm md:text-base lg:text-lg">
+        <button className="mt-6 px-6 py-3 font-bold bg-gradient-to-r from-[#00ADB5] to-[#008C8C] text-white hover:bg-gradient-to-l hover:bg-[#008C8C]  duration-300 border-none rounded-lg hover:scale-105 transition-transform text-sm md:text-base lg:text-lg">
           Download Now!
         </button>
       </div>

@@ -106,7 +106,7 @@ const AllReviews = () => {
 
  
 
-          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
             {filteredReviews.map((review) => (
               <div
                 key={review.id}
