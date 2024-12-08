@@ -22,7 +22,7 @@ const MyReviews = () => {
         fetch(`https://game-whiz-server-side.vercel.app/reviews/${id}`, {
           method: "DELETE",
         })
-        // Deleted!", "Your review has been deleted.", "success"
+
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {

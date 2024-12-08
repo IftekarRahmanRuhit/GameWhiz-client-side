@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 import { MdDarkMode } from "react-icons/md";
 import { IoMdSunny } from "react-icons/io";
 import { ThemeContext } from "../ThemeContext/ThemeContext";
-import logo from "../../public/logo.png"
+
 
 const Navbar = () => {
   const { user, signOutUser, loading } = useContext(AuthContext);
@@ -186,7 +186,7 @@ const Navbar = () => {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-5 w-5 dark:text-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -200,7 +200,7 @@ const Navbar = () => {
               </svg>
             </button>
             {isMenuOpen && (
-              <ul className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+              <ul className="menu menu-sm dropdown-content bg-base-100 dark:bg-slate-800 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                 {links}
               </ul>
             )}
