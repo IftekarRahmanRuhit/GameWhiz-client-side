@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 import { MdDarkMode } from "react-icons/md";
 import { IoMdSunny } from "react-icons/io";
 import { ThemeContext } from "../ThemeContext/ThemeContext";
+import logo from "../../public/logo.png"
 
 const Navbar = () => {
   const { user, signOutUser, loading } = useContext(AuthContext);
@@ -208,6 +209,7 @@ const Navbar = () => {
             to="/"
             className="btn btn-ghost text-2xl text-[#00ADB5] font-bold flex justify-center items-center"
           >
+            
             <p className="text-lg md:text-2xl">GameWhiz</p>
           </Link>
         </div>
