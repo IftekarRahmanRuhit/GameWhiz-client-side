@@ -1,27 +1,27 @@
 
 import React from 'react';
 import { Link, useLoaderData } from "react-router-dom";
-import { useTypewriter } from "react-simple-typewriter";
+
+import { Typewriter } from "react-simple-typewriter";
 
 const HighestRatedReviews = () => {
   const reviews = useLoaderData();
 
-  const [text] = useTypewriter({
-    words: [
-      'Explore The Highest Rated Game',
-    ],
-    loop: true,
-    typeSpeed: 80,
-    deleteSpeed: 80,
-    delaySpeed: 1500,
-  });
+
 
   return (
     <div className="bg-[#e3ebeb] dark:bg-gradient-to-r from-gray-800 via-[#013b3b] to-gray-800 p-10 max-w-screen-2xl mx-auto">
 
       <div>
         <p className="text-2xl md:text-4xl text-center text-gray-800 dark:text-gray-300 font-bold mb-6 mt-16">
-          {text}
+        <Typewriter
+          words={["Explore The Highest Rated Game"]}
+          loop={false}
+          cursor
+          cursorStyle="|"
+          typeSpeed={70}
+          deleteSpeed={50}
+        />
         </p>
         <p className="text-gray-800 font-medium dark:text-gray-300 text-center mb-16">
           Discover top-rated games with stunning visuals, thrilling gameplay, captivating stories, and

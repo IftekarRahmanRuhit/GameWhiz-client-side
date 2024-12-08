@@ -3,10 +3,10 @@ import cod from "../../public/COD.mp4";
 
 const Video = () => {
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="relative h-screen w-full overflow-hidden max-w-screen-2xl mx-auto">
       <div className="relative w-full h-full">
         <video
-          src={cod} // Correct path for files in the public folder
+          src={cod} 
           autoPlay
           muted
           loop

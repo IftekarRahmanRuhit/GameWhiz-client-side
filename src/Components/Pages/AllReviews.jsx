@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 
 const AllReviews = () => {
   const allReviews = useLoaderData();
@@ -24,7 +25,14 @@ const AllReviews = () => {
       <div className=" min-h-screen py-10">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold text-center mb-4 text-gray-800 dark:text-gray-300 animate__animated animate__backInDown">
-            Explore All Reviews
+            <Typewriter
+              words={["Explore All Reviews"]}
+              loop={false}
+              cursor
+              cursorStyle="|"
+              typeSpeed={70}
+              deleteSpeed={50}
+            />
           </h1>
           <p className="text-gray-800 font-medium dark:text-gray-300 text-center mb-10 animate__animated animate__backInDown ">
             Dive into our comprehensive collection of game reviews! From
@@ -36,7 +44,6 @@ const AllReviews = () => {
           <div className="w-11/12 mx-auto mb-6 flex justify-between">
             <div className="flex">
               <details className="dropdown">
-                
                 <summary className="btn m-1 bg-gradient-to-r from-[#00ADB5] to-[#008C8C] text-white hover:bg-gradient-to-l hover:bg-[#008C8C] transition-all duration-300 border-none">
                   Sort By
                 </summary>
@@ -103,8 +110,6 @@ const AllReviews = () => {
               </details>
             </div>
           </div>
-
- 
 
           <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
             {filteredReviews.map((review) => (
