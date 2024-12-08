@@ -1,5 +1,6 @@
 import Banner from "../Banner";
 import HighestRatedReviews from "../HighestRatedReviews";
+import Video from "../Video";
 
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
 
             <Banner></Banner>
             <HighestRatedReviews></HighestRatedReviews>
+            <Video></Video>
         </div>
     );
 };

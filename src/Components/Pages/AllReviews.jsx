@@ -36,6 +36,7 @@ const AllReviews = () => {
           <div className="w-11/12 mx-auto mb-6 flex justify-between">
             <div className="flex">
               <details className="dropdown">
+                
                 <summary className="btn m-1 bg-gradient-to-r from-[#00ADB5] to-[#008C8C] text-white hover:bg-gradient-to-l hover:bg-[#008C8C] transition-all duration-300 border-none">
                   Sort By
                 </summary>
@@ -62,7 +63,7 @@ const AllReviews = () => {
 
             <div className="flex">
               <details className="dropdown">
-                <summary className="btn m-1 bg-gradient-to-r from-[#00ADB5] to-[#008C8C] text-white hover:bg-gradient-to-l hover:bg-[#008C8C] transition-all duration-300 border-none font">
+                <summary className=" btn m-1 bg-gradient-to-r from-[#00ADB5] to-[#008C8C] text-white hover:bg-gradient-to-l hover:bg-[#008C8C] transition-all duration-300 border-none font">
                   Filter By Genre
                 </summary>
                 <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-28 p-2 shadow bg-gradient-to-r from-white via-[#E0F7F9] to-[#F0FCFC]">

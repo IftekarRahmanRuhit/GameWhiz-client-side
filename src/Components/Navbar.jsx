@@ -230,7 +230,7 @@ const Navbar = () => {
                   setTheme("light");
                   localStorage.setItem("theme", "light");
                 }}
-                className="text-[30px] bg-slate-300 text-black p-1 rounded-full cursor-pointer"
+                className="text-[30px] bg-slate-300 text-yellow-600 p-1 rounded-full cursor-pointer"
               />
             )}
           </div>
