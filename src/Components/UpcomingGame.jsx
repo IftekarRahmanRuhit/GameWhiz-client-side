@@ -5,7 +5,7 @@ import img from "../../public/IMG.png";
 
 const UpcomingGame = () => {
   return (
-    <div className="bg-[#e3ebeba4] dark:bg-[#071523] text-white p-20">
+    <div className="bg-[#e3ebeba4] dark:bg-[#071523] text-white p-20 max-w-screen-2xl mx-auto">
       {/* Heading with Typewriter Effect */}
       <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-300 text-center mb-20">
         <Typewriter
