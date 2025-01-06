@@ -31,18 +31,18 @@ const HighestRatedReviews = () => {
       </div>
 
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-11/12 mx-auto pb-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-11/12 mx-auto pb-20 ">
         {reviews.map((review) => (
           <div
             key={review._id}
-            className="card relative bg-base-100 dark:bg-gray-900 dark:text-white p-6 rounded-lg shadow-lg animate__animated animate__fadeInUp cursor-pointer"
+            className=" card relative bg-base-100 dark:bg-gray-900 dark:text-white p-6 rounded-lg shadow-lg animate__animated animate__fadeInUp cursor-pointer"
           >
  
             <div className="relative overflow-hidden rounded-lg">
               <img
                 src={review.coverImage}
                 alt={review.title}
-                className="w-full h-48 object-cover rounded-lg"
+                className="w-full h-48 object-cover rounded-lg hover:scale-105 transition transform duration-700"
               />
             </div>
 
