@@ -27,7 +27,7 @@ const LatestNews = () => {
           <img
             src={img1}
             alt="Mastering Game Development"
-            className="h-48 w-full object-cover"
+            className="h-48 w-full object-cover hover:scale-105 transition transform duration-700"
           />
           <div className="p-4">
             <span className="bg-[#008C8C] text-white font-semibold text-xs px-2 py-1 rounded inline-block mb-2">
@@ -47,7 +47,7 @@ const LatestNews = () => {
           <img
             src={img2}
             alt="Optimizing Multi-Platform Game Development"
-            className="h-48 w-full object-cover"
+            className="h-48 w-full object-cover hover:scale-105 transition transform duration-700"
           />
           <div className="p-4">
             <span className="bg-[#008C8C] text-white font-semibold text-xs px-2 py-1 rounded inline-block mb-2">
@@ -68,7 +68,7 @@ const LatestNews = () => {
           <img
             src={img3}
             alt="Soundtrack of Success"
-            className="h-48 w-full object-cover"
+            className="h-48 w-full object-cover hover:scale-105 transition transform duration-700"
           />
           <div className="p-4">
             <span className="bg-[#008C8C] text-white font-semibold text-xs px-2 py-1 rounded inline-block mb-2">
