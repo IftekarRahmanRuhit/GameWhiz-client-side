@@ -23,7 +23,7 @@ const AllReviews = () => {
   return (
     <div className="bg-[#e3ebeb] dark:bg-gradient-to-r from-gray-800 via-[#013b3b] to-gray-800 p-7 max-w-screen-2xl mx-auto">
       <div className=" min-h-screen py-10">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 mt-20">
           <h1 className="text-4xl font-bold text-center mb-4 text-gray-800 dark:text-gray-300 animate__animated animate__backInDown">
             <Typewriter
               words={["Explore All Reviews"]}

@@ -52,9 +52,9 @@ const AddReview = () => {
   };
 
   return (
-    <div className="bg-[#e3ebeb] dark:bg-gradient-to-r from-gray-800 via-[#013b3b] to-gray-800 pb-10 max-w-screen-2xl mx-auto">
+    <div className="bg-[#e3ebeb] dark:bg-gradient-to-r from-gray-800 via-[#013b3b] to-gray-800 pb-20 max-w-screen-2xl mx-auto ">
       <div className="p-10">
-        <p className="text-4xl font-bold text-center mb-4 text-gray-800 dark:text-gray-300 animate__animated animate__backInDown">
+        <p className="text-4xl font-bold text-center mb-4 text-gray-800 dark:text-gray-300 animate__animated animate__backInDown mt-28">
           Add Your Game Review
         </p>
         <p className="text-gray-800 font-medium dark:text-gray-300 text-center animate__animated animate__backInDown">

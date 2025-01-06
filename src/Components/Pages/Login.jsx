@@ -60,17 +60,17 @@ const Login = () => {
   return (
     <div className="hero min-h-screen bg-gray-900 relative max-w-screen-2xl mx-auto">
 
-      <div className="">
+      {/* <div className="">
         <Lottie
           loop
           animationData={darkBgAnimation}
           play
           className="w-full h-full max-w-screen-2xl mx-auto"
         />
-      </div>
+      </div> */}
 
-      <div className="hero-content flex-col lg:flex-row-reverse w-full z-10 relative">
-        <div className="card mt-4 bg-white dark:bg-gray-800 w-full max-w-lg shrink-0 shadow-2xl border mb-16 dark:border-gray-700">
+      <div className="hero-content flex-col lg:flex-row-reverse w-full z-10 relative ">
+        <div className="card mt-36 bg-white dark:bg-gray-800 w-full max-w-lg shrink-0  border mb-16 dark:border-gray-700 ">
           <form onSubmit={handleLogin} className="card-body">
             <img className="w-12 h-12 mx-auto" src={user} alt="User" />
             <h1 className="text-3xl font-bold text-center text-[#00ADB5] dark:text-[#00ADB5]">

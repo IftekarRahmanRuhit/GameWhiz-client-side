@@ -9,7 +9,7 @@ const GameWatchlist = () => {
 
 <div className="w-4/5 mx-auto pb-16">
       <div className="p-8">
-        <h1 className=" text-2xl md:text-3xl font-bold mb-10 mt-5  text-gray-800 dark:text-gray-300 animate__animated animate__backInLeft">
+        <h1 className=" text-2xl md:text-3xl font-bold mb-10 mt-28  text-gray-800 dark:text-gray-300 animate__animated animate__backInLeft">
           Your Game Watchlist
         </h1>
 

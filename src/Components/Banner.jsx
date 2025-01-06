@@ -17,7 +17,7 @@ const Banner = () => {
 
   return (
     <div className="max-w-screen-2xl mx-auto">
-      <div className=" w-full">
+      <div className=" w-full mt-20 ">
         <div
           className={`carousel-item relative w-full ${
             activeSlide === 1 ? "block" : "hidden"

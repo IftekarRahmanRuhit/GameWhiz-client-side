@@ -52,7 +52,7 @@ const ReviewDetails = () => {
 
   return (
 <div className="p-16 bg-[#e3ebeb] dark:bg-gradient-to-r from-gray-800 via-[#013b3b] to-gray-800 ">
-<div className="max-w-3xl mx-auto p-6 bg-base-100 dark:bg-gray-900 shadow-lg rounded-lg animate__animated animate__fadeInUp cursor-pointer">
+<div className="max-w-3xl mt-20 mx-auto p-6 bg-base-100 dark:bg-gray-900 shadow-lg rounded-lg animate__animated animate__fadeInUp cursor-pointer">
       <img
         src={review.coverImage}
         alt={review.title}
