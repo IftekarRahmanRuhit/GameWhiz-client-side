@@ -1,4 +1,4 @@
-# Gamewehiz
+# Gamewhiz
 
 ## Description Of The Project
 
@@ -8,6 +8,12 @@
 
 ## Live Demo
 [Visit the Live Website](https://gamewhiz-54611.web.app/) 
+
+
+---
+## Server Side Code
+[Gamewhiz Server-Side](https://github.com/IftekarRahmanRuhit/GameWhiz-Server-Side) 
+
 
 ---
 
