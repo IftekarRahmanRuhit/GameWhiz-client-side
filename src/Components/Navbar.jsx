@@ -54,7 +54,7 @@ const Navbar = () => {
         </NavLink>
       </li>
 
-      {user ? (
+      {user && (
         <>
           <li>
             <NavLink
@@ -93,67 +93,7 @@ const Navbar = () => {
             </NavLink>
           </li>
         </>
-      ) : (
-        <>
-          <li>
-            <NavLink
-              to="/login"
-              onClick={() =>
-                Swal.fire({
-                  icon: "warning",
-                  title: "Access Denied",
-                  text: "Please log in to add a review.",
-                  confirmButtonText: "Login",
-                  customClass: {
-                    confirmButton: 'bg-[#00ADB5]'
-                  }
-                })
-              }
-              className="text-gray-700 dark:text-blue-50 dark:hover:text-[#00ADB5] hover:text-[#00ADB5] font-semibold transition-all duration-200"
-            >
-              Add Review
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/login"
-              onClick={() =>
-                Swal.fire({
-                  icon: "warning",
-                  title: "Access Denied",
-                  text: "Please log in to view your reviews.",
-                  confirmButtonText: "Login",
-                  customClass: {
-                    confirmButton: 'bg-[#00ADB5]'
-                  }
-                })
-              }
-              className="text-gray-700 dark:text-blue-50 dark:hover:text-[#00ADB5] hover:text-[#00ADB5] font-semibold transition-all duration-200"
-            >
-              My Reviews
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/login"
-              onClick={() =>
-                Swal.fire({
-                  icon: "warning",
-                  title: "Access Denied",
-                  text: "Please log in to view your game watchlist.",
-                  confirmButtonText: "Login",
-                  customClass: {
-                    confirmButton: 'bg-[#00ADB5]'
-                  }
-                })
-              }
-              className="text-gray-700 dark:text-blue-50 dark:hover:text-[#00ADB5] hover:text-[#00ADB5] font-semibold transition-all duration-200"
-            >
-              Game WatchList
-            </NavLink>
-          </li>
-        </>
-      )}
+      ) }
     </>
   );
 
