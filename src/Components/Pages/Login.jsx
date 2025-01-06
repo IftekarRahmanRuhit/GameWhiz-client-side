@@ -58,7 +58,7 @@ const Login = () => {
   };
 
   return (
-    <div className="hero min-h-screen bg-gray-900 relative max-w-screen-2xl mx-auto">
+    <div className="hero min-h-screen bg-[#e3ebeb] dark:bg-gray-900 relative max-w-screen-2xl mx-auto">
 
       {/* <div className="">
         <Lottie

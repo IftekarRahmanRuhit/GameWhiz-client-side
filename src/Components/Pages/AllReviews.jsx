@@ -21,7 +21,7 @@ const AllReviews = () => {
     : sortedReviews;
 
   return (
-    <div className="bg-[#e3ebeb] dark:bg-gradient-to-r from-gray-800 via-[#013b3b] to-gray-800 p-7 max-w-screen-2xl mx-auto">
+    <div className="bg-[#e3ebeb] dark:bg-[#071523] p-7 max-w-screen-2xl mx-auto">
       <div className=" min-h-screen py-10">
         <div className="container mx-auto px-4 mt-20">
           <h1 className="text-4xl font-bold text-center mb-4 text-gray-800 dark:text-gray-300 animate__animated animate__backInDown">
@@ -115,7 +115,7 @@ const AllReviews = () => {
             {filteredReviews.map((review) => (
               <div
                 key={review.id}
-                className="card relative bg-base-100 dark:bg-gray-900 dark:text-white p-6 rounded-lg shadow-lg animate__animated animate__fadeInUp cursor-pointer"
+                className="card relative bg-base-100 dark:bg-gray-800 dark:text-white p-6 rounded-lg shadow-lg animate__animated animate__fadeInUp cursor-pointer"
               >
                 <div className="relative overflow-hidden rounded-lg">
                   <img

@@ -5,7 +5,7 @@ const GameWatchlist = () => {
 
 
   return (
-<div className="bg-[#e3ebeb] dark:bg-gradient-to-r from-gray-800 via-[#013b3b] to-gray-800 max-w-screen-2xl mx-auto">
+<div className="bg-[#e3ebeb] dark:bg-[#071523] max-w-screen-2xl mx-auto">
 
 <div className="w-4/5 mx-auto pb-16">
       <div className="p-8">

@@ -45,7 +45,7 @@ const MyReviews = () => {
   };
 
   return (
-    <div className="p-14 bg-[#e3ebeb] dark:bg-gradient-to-r from-gray-800 via-[#013b3b] to-gray-800 max-w-screen-2xl mx-auto">
+    <div className="p-14 bg-[#e3ebeb] dark:bg-[#071523] max-w-screen-2xl mx-auto">
       <h1 className="mt-28 text-2xl md:text-3xl font-bold  w-11/12 mx-auto text-gray-800 dark:text-gray-300 animate__animated animate__backInLeft mb-8">
         My Reviews
       </h1>
