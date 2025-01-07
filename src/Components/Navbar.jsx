@@ -110,12 +110,13 @@ const Navbar = () => {
   }
 
   return (
-    <div
+<div className="max-w-screen-2xl mx-auto">
+<div
       className={`w-full mx-auto  ${
         theme === "light"
           ? "bg-gradient-to-r from-white via-[#E0F7F9] to-[#F0FCFC]"
           : "bg-gradient-to-r from-gray-900 via-gray-800 to-black"
-      } md:p-2 max-w-screen-2xl fixed top-0 z-50 `}
+      } md:p-2 max-w-screen-2xl mx-auto fixed top-0 z-50 `}
     >
       <div className="navbar w-full md:w-11/12 mx-auto pt-4 pb-4 ">
         <div className="navbar-start">
@@ -240,6 +241,7 @@ const Navbar = () => {
         </div>
       </div>
     </div>
+</div>
   );
 };
 
