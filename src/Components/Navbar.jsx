@@ -61,23 +61,23 @@ const Navbar = () => {
   }
 
   return (
-    <div className="max-w-screen-2xl mx-auto">
+<div className="max-w-screen-2xl mx-auto">
       <nav
         className={`w-full mx-auto transition-all duration-500 ease-in-out ${
-          theme === "light"
+        theme === "light"
             ? isScrolled 
               ? "bg-white/90 backdrop-blur-md shadow-lg border-b border-gray-100"
               : "bg-gradient-to-r from-white via-[#E0F7F9] to-[#F0FCFC]"
             : isScrolled
               ? "bg-gray-900/90 backdrop-blur-md shadow-lg border-b border-gray-700"
-              : "bg-gradient-to-r from-gray-900 via-gray-800 to-black"
+          : "bg-gradient-to-r from-gray-900 via-gray-800 to-black"
         } md:p-2 max-w-screen-2xl mx-auto fixed top-0 z-50`}
-      >
+    >
         <div className="navbar w-full md:w-11/12 mx-auto pt-2 pb-2">
           {/* Logo Section */}
-          <div className="navbar-start">
-            <Link
-              to="/"
+        <div className="navbar-start">
+          <Link
+            to="/"
               className="btn btn-ghost text-2xl font-bold flex items-center gap-2 group"
             >
               <div className="relative">
@@ -89,11 +89,11 @@ const Navbar = () => {
               <span className="bg-gradient-to-r from-[#00ADB5] to-[#008C8C] bg-clip-text text-transparent text-xl md:text-2xl font-extrabold">
                 GameWhiz
               </span>
-            </Link>
-          </div>
+          </Link>
+        </div>
 
           {/* Desktop Navigation */}
-          <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal gap-1">
               {navLinks.map((link, index) => (
                 <li key={link.path}>
@@ -113,13 +113,13 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-          </div>
+        </div>
 
           {/* Right Section */}
           <div className="navbar-end flex items-center gap-3">
             {/* Theme Toggle */}
             <button
-              onClick={() => {
+                onClick={() => {
                 setTheme(theme === "light" ? "dark" : "light");
                 localStorage.setItem("theme", theme === "light" ? "dark" : "light");
               }}
@@ -147,7 +147,7 @@ const Navbar = () => {
             </button>
 
             {/* User Section */}
-            {user ? (
+          {user ? (
               <div className="dropdown dropdown-end">
                 <div
                   tabIndex="0"
@@ -179,36 +179,36 @@ const Navbar = () => {
                         {user?.displayName || "User"}
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400 text-sm truncate">
-                        {user?.email}
+                      {user?.email}
                       </p>
                     </div>
-                    <button
-                      onClick={handleSignOut}
+                      <button
+                        onClick={handleSignOut}
                       className="btn bg-gradient-to-r from-[#00ADB5] to-[#008C8C] hover:from-[#008C8C] hover:to-[#00ADB5] text-white border-none w-full transition-all duration-300 transform hover:scale-105"
-                    >
-                      Sign out
-                    </button>
+                      >
+                        Sign out
+                      </button>
                   </div>
                 </ul>
-              </div>
-            ) : (
+            </div>
+          ) : (
               <div className="flex items-center gap-2">
-                <Link
+              <Link
                   className="btn btn-sm md:btn-md bg-gradient-to-r from-[#00ADB5] to-[#008C8C] hover:from-[#008C8C] hover:to-[#00ADB5] text-white border-none transition-all duration-300 transform hover:scale-105 hidden md:flex"
-                  to="/Register"
-                >
-                  <FaUser className="mr-1" /> Sign up
-                </Link>
-                <Link
+                to="/Register"
+              >
+                <FaUser className="mr-1" /> Sign up
+              </Link>
+              <Link
                   className="btn btn-sm md:btn-md bg-gradient-to-r from-[#00ADB5] to-[#008C8C] hover:from-[#008C8C] hover:to-[#00ADB5] text-white border-none transition-all duration-300 transform hover:scale-105"
-                  to="/login"
-                >
-                  <LuLogIn className="mr-1" /> Login
-                </Link>
+                to="/login"
+              >
+                <LuLogIn className="mr-1" /> Login
+              </Link>
               </div>
-            )}
-          </div>
+          )}
         </div>
+      </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
@@ -233,11 +233,11 @@ const Navbar = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+    </div>
           </div>
         )}
       </nav>
-    </div>
+</div>
   );
 };
 

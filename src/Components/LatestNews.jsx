@@ -84,14 +84,14 @@ const LatestNews = () => {
               <FaNewspaper className="text-white text-2xl" />
             </div>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[#00ADB5] to-[#008C8C] bg-clip-text text-transparent min-h-[1.2em] flex items-center justify-center">
-              <Typewriter
+        <Typewriter
                 words={["Latest News & Articles"]}
-                loop={false}
-                cursor
-                cursorStyle="|"
-                typeSpeed={70}
-                deleteSpeed={50}
-              />
+          loop={false}
+          cursor
+          cursorStyle="|"
+          typeSpeed={70}
+          deleteSpeed={50}
+        />
             </h1>
           </div>
           
@@ -149,7 +149,7 @@ const LatestNews = () => {
                   <div className="absolute top-4 left-4">
                     <span className={`bg-gradient-to-r ${news.color} text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg`}>
                       {news.category}
-                    </span>
+            </span>
                   </div>
                   
                   {/* Action Buttons */}
@@ -175,7 +175,7 @@ const LatestNews = () => {
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 group-hover:text-[#00ADB5] transition-colors duration-300 line-clamp-2 leading-tight">
                       {news.title}
-                    </h3>
+            </h3>
                     
                     <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed line-clamp-3">
                       {news.excerpt}
@@ -196,9 +196,9 @@ const LatestNews = () => {
                       <div className="flex items-center gap-1">
                         <MdOutlineAccessTime className="text-[#00ADB5]" />
                         <span>{news.readTime}</span>
-                      </div>
-                    </div>
-                    
+          </div>
+        </div>
+
                     {/* Date and Read More */}
                     <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-700">
                       <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400">
@@ -210,8 +210,8 @@ const LatestNews = () => {
                         <FaArrowRight className="text-sm group-hover/btn:translate-x-1 transition-transform duration-300" />
                       </button>
                     </div>
-                  </div>
-                </div>
+          </div>
+        </div>
 
                 {/* Hover Effect Border */}
                 <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-[#00ADB5]/30 transition-all duration-500 pointer-events-none"></div>

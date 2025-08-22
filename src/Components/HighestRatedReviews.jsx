@@ -48,14 +48,14 @@ const HighestRatedReviews = () => {
          <div className="text-center mb-16">
            <div className="text-center mb-6">
              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[#00ADB5] to-[#008C8C] bg-clip-text text-transparent min-h-[1.2em] flex items-center justify-center">
-               <Typewriter
+        <Typewriter
                  words={["Highest Rated Games"]}
-                 loop={false}
-                 cursor
-                 cursorStyle="|"
-                 typeSpeed={70}
-                 deleteSpeed={50}
-               />
+          loop={false}
+          cursor
+          cursorStyle="|"
+          typeSpeed={70}
+          deleteSpeed={50}
+        />
              </h1>
            </div>
           
@@ -82,13 +82,13 @@ const HighestRatedReviews = () => {
               <span className="font-medium">Verified Quality</span>
             </div>
           </div>
-        </div>
+      </div>
 
         {/* Games Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {topReviews.map((review, index) => (
-            <div
-              key={review._id}
+          <div
+            key={review._id}
               className={`group relative transform transition-all duration-500 ease-out ${
                 isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
               }`}
@@ -101,8 +101,8 @@ const HighestRatedReviews = () => {
                 
                 {/* Image Section */}
                 <div className="relative overflow-hidden h-64">
-                  <img
-                    src={review.coverImage}
+              <img
+                src={review.coverImage}
                     alt={review.gameTitle}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
@@ -116,8 +116,8 @@ const HighestRatedReviews = () => {
                     <span className="text-sm font-bold text-gray-800 dark:text-gray-200">
                       {review.rating}
                     </span>
-                  </div>
-                  
+            </div>
+
                   {/* Play Button Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
                     <div className="bg-white/20 backdrop-blur-sm rounded-full p-4 border border-white/30">
@@ -129,8 +129,8 @@ const HighestRatedReviews = () => {
                   <div className="absolute bottom-4 left-4">
                     <span className="bg-gradient-to-r from-[#00ADB5] to-[#008C8C] text-white px-3 py-1 rounded-full text-sm font-medium">
                       {review.genre}
-                    </span>
-                  </div>
+                  </span>
+                </div>
                 </div>
 
                 {/* Content Section */}
@@ -150,9 +150,9 @@ const HighestRatedReviews = () => {
                           }`}
                         />
                       ))}
-                    </div>
-                  </div>
-                  
+              </div>
+            </div>
+
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
                     {review.description || `Experience the ultimate ${review.genre.toLowerCase()} adventure with stunning graphics and immersive gameplay.`}
                   </p>
@@ -171,19 +171,19 @@ const HighestRatedReviews = () => {
                   </div>
                   
                   {/* Action Button */}
-                  <Link to={`/reviews/${review._id}`}>
+            <Link to={`/reviews/${review._id}`}>
                     <button className="w-full bg-gradient-to-r from-[#00ADB5] to-[#008C8C] hover:from-[#008C8C] hover:to-[#00ADB5] text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2 group/btn">
                       <span>Explore Details</span>
                       <FaEye className="text-sm group-hover/btn:translate-x-1 transition-transform duration-300" />
-                    </button>
-                  </Link>
+              </button>
+            </Link>
                 </div>
 
                 {/* Hover Effect Border */}
                 <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-[#00ADB5]/30 transition-all duration-500 pointer-events-none"></div>
               </div>
-            </div>
-          ))}
+          </div>
+        ))}
         </div>
 
         {/* Call to Action Section */}
