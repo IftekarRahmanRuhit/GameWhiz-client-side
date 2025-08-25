@@ -40,7 +40,7 @@ const AllReviews = () => {
     <div className="bg-gradient-to-br from-[#e3ebeb] via-[#f0f6f6] to-[#e3ebeb] dark:bg-gradient-to-br dark:from-[#071523] dark:via-[#0a1a2a] dark:to-[#071523] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Header Section */}
-        <div className="text-center mb-12 pt-16 md:mt-16">
+        <div className="text-center mb-12 pt-16 ">
 
           
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-800 dark:text-white">

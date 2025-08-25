@@ -75,7 +75,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="relative max-w-screen-2xl mx-auto mt-8 md:mt-16 lg:mt-20 overflow-hidden">
+    <div className="relative max-w-screen-2xl mx-auto overflow-hidden">
       {/* Main Banner Container */}
       <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px]">
         {bannerData.map((slide, index) => (

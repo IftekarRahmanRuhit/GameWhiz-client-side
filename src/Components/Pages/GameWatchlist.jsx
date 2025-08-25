@@ -5,7 +5,7 @@ const GameWatchlist = () => {
 
   return (
     <div className="bg-gradient-to-br from-[#e3ebeb] via-[#f0f6f6] to-[#e3ebeb] dark:bg-gradient-to-br dark:from-[#071523] dark:via-[#0a1a2a] dark:to-[#071523] min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 py-8 md:mt-16">
+      <div className="max-w-7xl mx-auto px-4 py-8 ">
         {/* Header Section */}
         <div className="text-center mb-8 pt-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#00ADB5] to-[#008C8C] bg-clip-text text-transparent">
