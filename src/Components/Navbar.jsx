@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import toast from "react-hot-toast";
 import { FaUserCircle } from "react-icons/fa";
@@ -17,6 +17,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { theme, setTheme } = useContext(ThemeContext);
+  const mobileMenuRef = useRef(null);
 
   // Handle scroll effect
   useEffect(() => {
@@ -27,15 +28,25 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when clicking outside
+  // Close mobile menu when clicking outside or pressing Escape
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (isMenuOpen && !event.target.closest('.mobile-menu-container')) {
+    const handlePointerDown = (event) => {
+      if (!isMenuOpen) return;
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
         setIsMenuOpen(false);
       }
     };
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsMenuOpen(false);
+      }
+    };
+    document.addEventListener('pointerdown', handlePointerDown, true);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown, true);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
   }, [isMenuOpen]);
 
   const handleSignOut = () => {
@@ -214,9 +225,12 @@ const Navbar = () => {
 
               {/* Mobile Menu Button */}
               <button
-                className="lg:hidden p-2 rounded-lg transition-all duration-300 hover:bg-[#00ADB5]/10 mobile-menu-container"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="lg:hidden p-2 rounded-lg transition-all duration-300 hover:bg-[#00ADB5]/10"
+                onClick={(e) => { e.stopPropagation(); setIsMenuOpen(!isMenuOpen); }}
+                onPointerDown={(e) => e.stopPropagation()}
                 aria-label="Toggle mobile menu"
+                aria-expanded={isMenuOpen}
+                aria-controls="mobile-nav-menu"
               >
                 {isMenuOpen ? (
                   <IoClose className="text-xl text-gray-700 dark:text-gray-300 hover:text-[#00ADB5] transition-colors duration-300" />
@@ -229,7 +243,7 @@ const Navbar = () => {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="lg:hidden mobile-menu-container">
+            <div className="lg:hidden" ref={mobileMenuRef} id="mobile-nav-menu">
               <div className="py-4 border-t border-gray-200 dark:border-gray-700">
                 <div className="space-y-2">
                   {navLinks.map((link) => (
@@ -255,7 +269,7 @@ const Navbar = () => {
                       <Link
                         to="/register"
                         onClick={() => setIsMenuOpen(false)}
-                        className="block px-4 py-3 text-center text-[#00ADB5] hover:text-[#008C8C] font-medium transition-colors duration-300 border border-[#00ADB5]/20 rounded-lg"
+                         className="block px-4 py-3 text-center bg-gradient-to-r from-[#00ADB5] to-[#008C8C] text-white rounded-lg font-medium transition-all duration-300"
                       >
                         <FaUser className="inline mr-2" />
                         Sign up
